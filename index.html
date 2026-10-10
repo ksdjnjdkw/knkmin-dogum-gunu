@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIA KNK WORLD 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #fff5fa;
+      color: #573247;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .ust {
+      text-align: center;
+      padding: 14px;
+      background: #ffdeec;
+      color: #a83e70;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    header {
+      min-height: 80vh;
+      padding: 75px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff 0 3px, transparent 4px),
+        radial-gradient(circle at 85% 30%, #ffffff 0 4px, transparent 5px),
+        linear-gradient(145deg, #ffd7e9, #f5c8f7, #ffeaf2);
+      background-size: 90px 90px, 110px 110px, auto;
+    }
+
+    .etiket {
+      padding: 9px 16px;
+      border: 1px solid #e8a5c7;
+      border-radius: 30px;
+      background: #fff9fc;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 25px 0 12px;
+      color: #d64e91;
+      font-size: clamp(44px, 10vw, 82px);
+      line-height: 1.05;
+      text-shadow: 3px 4px 0 #fff;
+    }
+
+    header p {
+      max-width: 490px;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .buton {
+      display: inline-block;
+      margin: 12px 5px;
+      padding: 14px 21px;
+      border: none;
+      border-radius: 30px;
+      background: #df6da5;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+      font-size: 14px;
+    }
+
+    .buton:hover {
+      transform: translateY(-3px);
+      background: #c84b8b;
+    }
+
+    .acik {
+      background: white;
+      color: #bd4d83;
+      border: 1px solid #f0b7d2;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 13px 8px;
+      background: #fff8fcf2;
+      border-bottom: 1px solid #f5d7e6;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: #a54577;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 8px 10px;
+    }
+
+    section {
+      max-width: 850px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .bolum-baslik {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .bolum-baslik .mini {
+      color: #d45f99;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: #bd4d83;
+      font-size: clamp(27px, 5vw, 38px);
+      margin: 12px 0;
+    }
+
+    .kart {
+      padding: 25px;
+      border: 1px solid #f3c7dc;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 8px 25px #bd4d8310;
+      margin: 15px 0;
+    }
+
+    .kart h3 {
+      color: #c94e8c;
+      margin-top: 0;
+    }
+
+    .kart p {
+      line-height: 1.8;
+    }
+
+    .emoji {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .gizli-alan {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff0f7;
+      line-height: 1.9;
+      animation: belirme .35s ease;
+    }
+
+    .gizli-alan.goster {
+      display: block;
+    }
+
+    @keyframes belirme {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .balik {
+      background: linear-gradient(135deg, #fff, #fff0f7);
+    }
+
+    .mlbb {
+      background: linear-gradient(145deg, #fff0f7, #f3e6ff);
+      border-color: #e4c6f2;
+    }
+
+    .rozeti {
+      display: inline-block;
+      margin: 4px 3px;
+      padding: 8px 12px;
+      border-radius: 30px;
+      background: #ffe0ee;
+      color: #a83e70;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .son {
+      margin-top: 20px;
+      padding: 48px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #f7c9e0, #f0d1fa);
+    }
+
+    .son h2 {
+      color: #a53e79;
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      color: #a77b94;
+      font-size: 12px;
+    }
+
+    .kalp {
+      position: fixed;
+      bottom: -30px;
+      z-index: 20;
+      pointer-events: none;
+      animation: yuksel 4s linear forwards;
+    }
+
+    @keyframes yuksel {
+      to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      section {
+        padding: 52px 17px;
+      }
+
+      .kart {
+        padding: 20px;
+      }
+
+      nav {
+        gap: 1px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 8px 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ust">✦ EN SVDGM KNKM ✦</div>
+
+  <header id="baslangic">
+    <div class="etiket">BIRTHDAY PROJECT · 001</div>
+    <h1>II KI<br>DOGDUN KNK! 💗</h1>
+    <p>
+      balon baligi knksi bugun 17 yasina girdi
+      cnm knkm buyuyo agagagga umrm bu yil 
+      istdgn tum minisleri alrsn 
+    </p>
+    <div>
+      <a class="buton" href="#arsiv">DOSYAYI AC ↓</a>
+      <button class="buton acik" onclick="kalpler()">KALP YAGMURUUU AGAGAGA ♡</button>
+    </div>
+    <p style="font-size:12px; letter-spacing:2px;">MADE WITH LOVE & BİRAZ DALGA GEÇME</p>
+  </header>
+
+  <nav>
+    <a href="#arsiv">KNK BIZ BEST</a>
+    <a href="#balik">BALON BALIKLARI</a>
+    <a href="#mlbb">CECI CAMILLA</a>
+    <a href="#gizli">PEMBE KEDI TAVSAN MINISIYIS</a>
+  </nav>
+
+  <section id="arsiv">
+    <div class="bolum-baslik">
+      <div class="mini">GİZLİ BELGELER</div>
+      <h2>NE YAZCAM BILMIYOM 📁</h2>
+      <p>Bu sitedeki bilgiler gizli cnm</p>
+      <p style="font-size:12px;">(KODLAMA BECERIMIN 0 OLMSNDAN DOLAYI GERCEK BI GIZLI DOSYA DEGIL)</p>
+    </div>
+
+    <div class="kart">
+      <div class="emoji">💗</div>
+      <h3>slm ya </h3>
+      <p><b>isim:</b> tia</p>
+      <p><b>Uzmanlik:</b> trnin best minis koleksiyoncusu</p>
+      <p><b>ozel yetenek:</b> BEST REPIR</p>
+      <p><b>en havali ytnk</b> CLINT ve GRANGER oynyblmesi</p>
+    </div>
+
+    <div class="kart">
+      <div class="emoji">🏆</div>
+      <h3>super yetenekli knk!</h3>
+      <span class="rozeti">bu yil belese bir suru yeni minis aldn</span>
+      <span class="rozeti">muthis coverlr yaptn</span>
+      <span class="rozeti">fisitayarak rep yaptn</span>
+      <span class="rozeti">knk bu niye yt haftalik kanal ozeti gibi oldu ya</span>
+    </div>
+  </section>
+
+  <section id="balik">
+    <div class="bolum-baslik">
+      <div class="mini">CNM KNKM DOGUM GUNUN KUTLU OLSN</div>
+      <h2>🐡</h2>
+      <p>DUNYANIN EN TATLS KNKSISIN</p>
+    </div>
+
+    <div class="kart balik">
+      <div class="emoji">🐡 </div>
+      <h3>EZIK</h3>
+      <p>
+        BU GUN KOTU Bİ SEY OLDU... arkm balon baligi yedi
+      </p>
+      <p>
+        BAZI INSANLAR KAHRAMAN OLR BZILARI EFSANE
+        Bazlri ise balon baligi yiyip yesil olr 
+      </p>
+      <button class="buton" onclick="mesajAc('balikmesaj')">
+        TIKLA 📄
+      </button>
+      <div class="gizli-alan" id="balikmesaj">
+        <b>KNK BU GARIP SITENIN OLAYI</b><br>
+        knk mlsf sna minis alamiyom bnde dedim su
+        ck sevdgm knkma site yapim boyle gizli
+        sekmeli fln buraya kdr gelmen bile basari
+        cnku ck karmasik<br>
+        umrm guzel bi site olr bnde yaziyom bi syler ama nsi olck gorces<br><br>
+        <b>sonuc:</b> UMRM BEGENIRSN 😭
+      </div>
+    </div>
+  </section>
+
+  <section id="mlbb">
+    <div class="bolum-baslik">
+      <div class="mini">BEST PRELER</div>
+      <h2>EN II ML DUO KNKLAR? 🎮</h2>
+      <p>rakiplrn korkulu ruyasi... flor angel </p>
+    </div>
+
+    <div class="kart mlbb">
+      <div class="emoji">💜</div>
+      <h3>Carmilla × Cecilion</h3>
+      <p>
+        knk bizdn ii carmila ceci asla olamas harikayis bb
+      </p>
+      <span class="rozeti">CARMILLA</span>
+      <span class="rozeti">CECILION</span>
+      <span class="rozeti">BEST DUO</span>
+      <p>
+        muthis uyum? %100<br>
+        mvp? %1000<br>
+        BEST KNKLAR!
+      </p>
+      <button class="buton" onclick="mesajAc('mlbbmesaj')">
+        CK GIZLI SIR 👀
+      </button>
+      <div class="gizli-alan" id="mlbbmesaj">
+        knk snle hint muzigi coverlamak
+        istioym 💗
+      </div>
+    </div>
+  </section>
+
+  <section id="gizli">
+    <div class="bolum-baslik">
+      <div class="mini">HEYYOOO</div>
+      <h2>SON BI SUPRIZ 💌</h2>
+      <p>butun garip yazilrmn arkasinda bi gercek vr</p>
+    </div>
+
+    <div class="kart" style="text-align:center;">
+      <div class="emoji">🎀💌🎀</div>
+      <h3>bu mesaji acmaya hazir misn cnm?</h3>
+      <button class="buton" onclick="mesajAc('kalbim')">
+        TIKLA ♡
+      </button>
+      <div class="gizli-alan" id="kalbim">
+        II KI VRSIN CNM KNKM. 💗<br><br>
+        Seninle konustugum, guldugum ve oyun oynadgm icin
+        gercktn ck mutluyum. sn olmasan napardm bilmyrm,
+        umrm tum dileklerin gerceklesir ve hep best knk olurus <br><br>
+        Sni ck ck ck seviom dogum gunun kutlu olsun 🎂<br><br>
+        <b>her daim sni sevcek bi knkn vr unutma bunu 💗</b>
+      </div>
+    </div>
+  </section>
+
+  <div class="son">
+    <div style="font-size:42px;">🎂 🎀 💗 🎀 🎂</div>
+    <h2>ii ki dogdn cnm knkm</h2>
+    <p>Bir yas daha buyudun artk ezik deglsn cnm bnim</p>
+    <button class="buton" onclick="kalpler()">SON KEZ KALP YAAGMURUU ♡</button>
+  </div>
+
+  <footer>
+    TIA KNK WORLD © · 💗
+  </footer>
+
+  <script>
+    function mesajAc(id) {
+      const alan = document.getElementById(id);
+      alan.classList.toggle("goster");
+    }
+
+    function kalpler() {
+      const emojiler = ["💗", "💕", "🎀", "💖", "✨"];
+
+      for (let i = 0; i < 28; i++) {
+        const kalp = document.createElement("span");
+        kalp.className = "kalp";
+        kalp.textContent =
+          emojiler[Math.floor(Math.random() * emojiler.length)];
+
+        kalp.style.left = Math.random() * 100 + "vw";
+        kalp.style.fontSize = (16 + Math.random() * 20) + "px";
+        kalp.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(kalp);
+        setTimeout(() => kalp.remove(), 6500);
+      }
+    }
+  </script>
+
+</body>
+</html>
