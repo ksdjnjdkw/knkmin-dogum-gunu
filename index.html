@@ -129,6 +129,77 @@
     @media (prefers-reduced-motion: reduce) {
       .efekt-kalp, .fare-kalbi, .konfeti-parca { animation-duration: 1.5s; }
     }
+    
+/* TIA KNK WORLD - hareketli yan emojiler */
+.floating-decor {
+  position: fixed;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+  font-size: 25px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.decor-float {
+  animation: emojiFloat 3.8s ease-in-out infinite;
+}
+
+.decor-spin {
+  animation: emojiSpin 5s ease-in-out infinite;
+}
+
+.decor-sway {
+  animation: emojiSway 3s ease-in-out infinite;
+}
+
+.decor-mix {
+  animation: emojiMix 4.5s ease-in-out infinite;
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-22px); }
+}
+
+@keyframes emojiSpin {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(22deg); }
+}
+
+@keyframes emojiSway {
+  0%, 100% { transform: translateX(-5px) rotate(-10deg); }
+  50% { transform: translateX(5px) rotate(10deg); }
+}
+
+@keyframes emojiMix {
+  0%, 100% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-16px) rotate(20deg); }
+}
+
+.decor-left {
+  left: 12px;
+}
+
+.decor-right {
+  right: 12px;
+}
+
+@media (max-width: 600px) {
+  .floating-decor {
+    font-size: 19px;
+    opacity: 0.7;
+  }
+
+  .decor-left {
+    left: 3px;
+  }
+
+  .decor-right {
+    right: 3px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -416,5 +487,22 @@
   </details>
 </section>
 ```
+
+<!-- SOL KENAR -->
+<div class="floating-decor decor-float decor-left" style="top: 9%; animation-delay: -1s;">🐶</div>
+<div class="floating-decor decor-spin decor-left" style="top: 23%; animation-delay: -2s;">🎀</div>
+<div class="floating-decor decor-mix decor-left" style="top: 38%; animation-delay: -1.5s;">😈</div>
+<div class="floating-decor decor-sway decor-left" style="top: 53%; animation-delay: -0.5s;">🍦</div>
+<div class="floating-decor decor-float decor-left" style="top: 69%; animation-delay: -2.5s;">🐾</div>
+<div class="floating-decor decor-spin decor-left" style="top: 84%; animation-delay: -1s;">🌟</div>
+
+<!-- SAĞ KENAR -->
+<div class="floating-decor decor-sway decor-right" style="top: 15%; animation-delay: -1.5s;">👿</div>
+<div class="floating-decor decor-float decor-right" style="top: 29%; animation-delay: -2s;">⭐</div>
+<div class="floating-decor decor-spin decor-right" style="top: 43%; animation-delay: -0.5s;">🎀</div>
+<div class="floating-decor decor-mix decor-right" style="top: 59%; animation-delay: -3s;">🐕</div>
+<div class="floating-decor decor-sway decor-right" style="top: 74%; animation-delay: -1s;">🌸</div>
+<div class="floating-decor decor-float decor-right" style="top: 89%; animation-delay: -2s;">✨</div>
+
 </body>
 </html>
