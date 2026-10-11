@@ -1,346 +1,149 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TIA KNK WORLD 💗</title>
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      background: #fff5fa;
-      color: #573247;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      margin: 0; background: #fff5fa; color: #573247;
+      font-family: Arial, sans-serif; overflow-x: hidden;
     }
-
     .ust {
-      text-align: center;
-      padding: 14px;
-      background: #ffdeec;
-      color: #a83e70;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: bold;
+      text-align: center; padding: 14px; background: #ffdeec; color: #a83e70;
+      font-size: 13px; letter-spacing: 2px; font-weight: bold;
     }
-
     header {
-      min-height: 80vh;
-      padding: 75px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      min-height: 80vh; padding: 75px 20px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
       background:
         radial-gradient(circle at 15% 20%, #ffffff 0 3px, transparent 4px),
         radial-gradient(circle at 85% 30%, #ffffff 0 4px, transparent 5px),
         linear-gradient(145deg, #ffd7e9, #f5c8f7, #ffeaf2);
       background-size: 90px 90px, 110px 110px, auto;
     }
-
     .etiket {
-      padding: 9px 16px;
-      border: 1px solid #e8a5c7;
-      border-radius: 30px;
-      background: #fff9fc;
-      font-size: 12px;
-      letter-spacing: 2px;
+      padding: 9px 16px; border: 1px solid #e8a5c7; border-radius: 30px;
+      background: #fff9fc; font-size: 12px; letter-spacing: 2px;
     }
-
+    .baslik-satiri {
+      width: 100%; max-width: 1000px; display: flex; align-items: center;
+      justify-content: center; gap: clamp(8px, 2.5vw, 28px); margin: 12px auto 0;
+    }
+    .minis-foto {
+      display: block; width: clamp(76px, 17vw, 175px); height: clamp(76px, 17vw, 175px);
+      object-fit: contain; flex: 0 1 auto; mix-blend-mode: multiply;
+      filter: drop-shadow(0 5px 5px #a83e7020);
+    }
     h1 {
-      margin: 25px 0 12px;
-      color: #d64e91;
-      font-size: clamp(44px, 10vw, 82px);
-      line-height: 1.05;
-      text-shadow: 3px 4px 0 #fff;
+      margin: 12px 0; color: #d64e91; font-size: clamp(30px, 7.2vw, 82px);
+      line-height: 1.05; text-shadow: 3px 4px 0 #fff; flex: 0 1 auto;
     }
-
-    header p {
-      max-width: 490px;
-      line-height: 1.8;
-      font-size: 17px;
-    }
-
+    header p { max-width: 490px; line-height: 1.8; font-size: 17px; }
     .buton {
-      display: inline-block;
-      margin: 12px 5px;
-      padding: 14px 21px;
-      border: none;
-      border-radius: 30px;
-      background: #df6da5;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
+      display: inline-block; margin: 12px 5px; padding: 14px 21px; border: none;
+      border-radius: 30px; background: #df6da5; color: white; font-weight: bold;
+      text-decoration: none; cursor: pointer; transition: transform .2s, background .2s;
       font-size: 14px;
     }
-
-    .buton:hover {
-      transform: translateY(-3px);
-      background: #c84b8b;
-    }
-
-    .acik {
-      background: white;
-      color: #bd4d83;
-      border: 1px solid #f0b7d2;
-    }
-
+    .buton:hover { transform: translateY(-3px); background: #c84b8b; }
+    .acik { background: white; color: #bd4d83; border: 1px solid #f0b7d2; }
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 13px 8px;
-      background: #fff8fcf2;
-      border-bottom: 1px solid #f5d7e6;
-      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 10; display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 8px; padding: 13px 8px; background: #fff8fcf2;
+      border-bottom: 1px solid #f5d7e6; backdrop-filter: blur(10px);
     }
-
-    nav a {
-      color: #a54577;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 8px 10px;
-    }
-
-    section {
-      max-width: 850px;
-      margin: auto;
-      padding: 70px 20px;
-    }
-
-    .bolum-baslik {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .bolum-baslik .mini {
-      color: #d45f99;
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: bold;
-    }
-
-    h2 {
-      color: #bd4d83;
-      font-size: clamp(27px, 5vw, 38px);
-      margin: 12px 0;
-    }
-
+    nav a { color: #a54577; text-decoration: none; font-size: 13px; font-weight: bold; padding: 8px 10px; }
+    section { max-width: 850px; margin: auto; padding: 70px 20px; }
+    .bolum-baslik { text-align: center; margin-bottom: 32px; }
+    .bolum-baslik .mini { color: #d45f99; font-size: 12px; letter-spacing: 3px; font-weight: bold; }
+    h2 { color: #bd4d83; font-size: clamp(27px, 5vw, 38px); margin: 12px 0; }
     .kart {
-      padding: 25px;
-      border: 1px solid #f3c7dc;
-      border-radius: 24px;
-      background: #fff;
-      box-shadow: 0 8px 25px #bd4d8310;
-      margin: 15px 0;
+      padding: 25px; border: 1px solid #f3c7dc; border-radius: 24px; background: #fff;
+      box-shadow: 0 8px 25px #bd4d8310; margin: 15px 0;
     }
-
-    .kart h3 {
-      color: #c94e8c;
-      margin-top: 0;
-    }
-
-    .kart p {
-      line-height: 1.8;
-    }
-
-    .emoji {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
+    .kart h3 { color: #c94e8c; margin-top: 0; }
+    .kart p { line-height: 1.8; }
+    .emoji { font-size: 32px; margin-bottom: 10px; }
     .gizli-alan {
-      display: none;
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #fff0f7;
-      line-height: 1.9;
-      animation: belirme .35s ease;
+      display: none; margin-top: 18px; padding: 18px; border-radius: 16px;
+      background: #fff0f7; line-height: 1.9; animation: belirme .35s ease;
     }
-
-    .gizli-alan.goster {
-      display: block;
-    }
-
+    .gizli-alan.goster { display: block; }
     @keyframes belirme {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .balik {
-      background: linear-gradient(135deg, #fff, #fff0f7);
-    }
-
-    .mlbb {
-      background: linear-gradient(145deg, #fff0f7, #f3e6ff);
-      border-color: #e4c6f2;
-    }
-
+    .balik { background: linear-gradient(135deg, #fff, #fff0f7); }
+    .mlbb { background: linear-gradient(145deg, #fff0f7, #f3e6ff); border-color: #e4c6f2; }
     .rozeti {
-      display: inline-block;
-      margin: 4px 3px;
-      padding: 8px 12px;
-      border-radius: 30px;
-      background: #ffe0ee;
-      color: #a83e70;
-      font-size: 12px;
-      font-weight: bold;
+      display: inline-block; margin: 4px 3px; padding: 8px 12px; border-radius: 30px;
+      background: #ffe0ee; color: #a83e70; font-size: 12px; font-weight: bold;
     }
-
-    .son {
-      margin-top: 20px;
-      padding: 48px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #f7c9e0, #f0d1fa);
-    }
-
-    .son h2 {
-      color: #a53e79;
-    }
-
-    footer {
-      padding: 22px;
-      text-align: center;
-      color: #a77b94;
-      font-size: 12px;
-    }
-
-    /* ESKI YUKSELEN KALPLER */
+    .son { margin-top: 20px; padding: 48px 20px; text-align: center; background: linear-gradient(135deg, #f7c9e0, #f0d1fa); }
+    .son h2 { color: #a53e79; }
+    footer { padding: 22px; text-align: center; color: #a77b94; font-size: 12px; }
     .kalp {
-      position: fixed;
-      bottom: -30px;
-      z-index: 20;
-      pointer-events: none;
+      position: fixed; bottom: -30px; z-index: 20; pointer-events: none;
       animation: yuksel 4s linear forwards;
     }
-
     @keyframes yuksel {
-      to {
-        transform: translateY(-110vh) rotate(30deg);
-        opacity: 0;
-      }
+      to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
     }
-
-    /* YENI: EKRANA YAGAN KALPLER VE KURDELELER */
     .efekt-kalp {
-      position: fixed;
-      top: -45px;
-      z-index: 9999;
-      pointer-events: none;
-      user-select: none;
-      animation: kalpDus 3.5s linear forwards;
-      will-change: transform, opacity;
+      position: fixed; top: -45px; z-index: 9999; pointer-events: none;
+      user-select: none; animation: kalpDus 3.5s linear forwards; will-change: transform, opacity;
     }
-
     @keyframes kalpDus {
-      0% {
-        transform: translateY(-5vh) rotate(0deg) scale(.7);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg) scale(1.2);
-        opacity: 0;
-      }
+      0% { transform: translateY(-5vh) rotate(0deg) scale(.7); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg) scale(1.2); opacity: 0; }
     }
-
-    /* YENI: FARE ARKASINDAKI KALPLER */
     .fare-kalbi {
-      position: fixed;
-      z-index: 9998;
-      pointer-events: none;
-      user-select: none;
+      position: fixed; z-index: 9998; pointer-events: none; user-select: none;
       animation: kalpKaybol .8s ease-out forwards;
     }
-
     @keyframes kalpKaybol {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -100%) scale(.2) rotate(25deg);
-        opacity: 0;
-      }
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(-50%, -100%) scale(.2) rotate(25deg); opacity: 0; }
     }
-
-    /* YENI: KONFETI */
     .konfeti-parca {
-      position: fixed;
-      top: -25px;
-      z-index: 10000;
-      pointer-events: none;
-      animation: konfetiDus linear forwards;
-      will-change: transform, opacity;
+      position: fixed; top: -25px; z-index: 10000; pointer-events: none;
+      animation: konfetiDus linear forwards; will-change: transform, opacity;
     }
-
     @keyframes konfetiDus {
-      to {
-        transform: translate(var(--kayma), 110vh) rotate(900deg);
-        opacity: .15;
-      }
+      to { transform: translate(var(--kayma), 110vh) rotate(900deg); opacity: .15; }
     }
-
     @media (max-width: 500px) {
-      section {
-        padding: 52px 17px;
-      }
-
-      .kart {
-        padding: 20px;
-      }
-
-      nav {
-        gap: 1px;
-      }
-
-      nav a {
-        font-size: 12px;
-        padding: 8px 7px;
-      }
+      section { padding: 52px 17px; }
+      .kart { padding: 20px; }
+      nav { gap: 1px; }
+      nav a { font-size: 12px; padding: 8px 7px; }
+      header { padding: 55px 10px; }
+      .baslik-satiri { gap: 5px; }
+      .minis-foto { width: clamp(58px, 18vw, 90px); height: clamp(58px, 18vw, 90px); }
+      h1 { font-size: clamp(27px, 7vw, 38px); }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      .efekt-kalp,
-      .fare-kalbi,
-      .konfeti-parca {
-        animation-duration: 1.5s;
-      }
+      .efekt-kalp, .fare-kalbi, .konfeti-parca { animation-duration: 1.5s; }
     }
   </style>
 </head>
-
 <body>
-
   <div class="ust">✦ EN SVDGM KNKM ✦</div>
-
   <header id="baslangic">
     <div class="etiket">CNM KNKMIN DOGUM GUNU · 001</div>
-    <h1>II KI<br>DOGDUN KNK! 💗</h1>
+    <div class="baslik-satiri">
+      <img class="minis-foto" src="resimler/minis-kedi.jpg" alt="Minik gri kedi figürü">
+      <h1>II KI<br>DOGDUN KNK! 💗</h1>
+      <img class="minis-foto" src="resimler/minis-kedi.jpg" alt="Minik gri kedi figürü">
+    </div>
     <p>
       balon baligi knksi bugun 17 yasina girdi
-      cnm knkm buyuyo agagagga umrm bu yil 
-      istdgn tum minisleri alrsn 
+      cnm knkm buyuyo agagagga umrm bu yil&#x20;
+      istdgn tum minisleri alrsn&#x20;
     </p>
     <div>
       <a class="buton" href="#arsiv">DOSYAYI AC ↓</a>
@@ -348,22 +151,19 @@
     </div>
     <p style="font-size:12px; letter-spacing:2px;">FLORENTIA & MIVIA</p>
   </header>
-
   <nav>
     <a href="#arsiv">DUNYANIN EN TATLI KNKSI</a>
     <a href="#balik">BALON BALIGI KNKSI</a>
     <a href="#mlbb">HER SEYDE EN II</a>
     <a href="#gizli">PEMBE KEDI TAVSAN MINIS</a>
   </nav>
-
   <section id="arsiv">
     <div class="bolum-baslik">
       <div class="mini">SITE HAKKNDA</div>
       <h2>BU SITE SDC EN SVDGM KNKMA OZEL 📁</h2>
-      <p>Bu sitedeki bilgiler gizli cnm</p>
-      <p style="font-size:12px;">(KODLAMA BECERIMIN 0 OLMSNDAN DOLAYI GERCEK BI GIZLI DOSYA DEGIL)</p>
+      <p>Bu siteyi snin icn yaptm cnm</p>
+      <p style="font-size:12px;">(KNK EKRANA DOKUNDUKCA KALP CIKIYO)</p>
     </div>
-
     <div class="kart">
       <div class="emoji">💗</div>
       <h3>DUNYANIN EN TATLI KNKSI </h3>
@@ -372,7 +172,6 @@
       <p><b>ozel yetenek:</b> BEST REPIR</p>
       <p><b>en havali ytnk</b> CLINT ve GRANGER oynyblmesi</p>
     </div>
-
     <div class="kart">
       <div class="emoji">🏆</div>
       <h3>super yetenekli knk!</h3>
@@ -382,92 +181,63 @@
       <span class="rozeti">knk bu niye yt haftalik kanal ozeti gibi oldu ya</span>
     </div>
   </section>
-
   <section id="balik">
     <div class="bolum-baslik">
       <div class="mini">BALON BALIKLANDIN KNKG!</div>
       <h2>🐡</h2>
       <p>BUGUN OZEL GUN CUNKU BALON BALIGI KNKSI BUYUDU </p>
     </div>
-
     <div class="kart balik">
       <div class="emoji">🐡 </div>
       <h3>EZIK</h3>
-      <p>
-        BU GUN KOTU BI SEY OLDU... arkm balon baligi yedi
-      </p>
-      <p>
-        BAZI INSANLAR KAHRAMAN OLR BZILARI EFSANE
-        Bazlri ise balon baligi yiyip yesil olr 
-      </p>
-      <button class="buton" onclick="mesajAc('balikmesaj')">
-        TIKLA 📄
-      </button>
+      <p>BU GUN KOTU BI SEY OLDU... arkm balon baligi yedi</p>
+      <p>BAZI INSANLAR KAHRAMAN OLR BZILARI EFSANE Bazlri ise balon baligi yiyip yesil olr&#x20;</p>
+      <button class="buton" onclick="mesajAc('balikmesaj')">TIKLA 📄</button>
       <div class="gizli-alan" id="balikmesaj">
         <b>KNK BU GARIP SITENIN OLAYI</b><br>
-        knk mlsf sna minis alamiyom bnde dedim su
-        ck sevdgm knkma site yapim of lnt olsn super fikir!<br>
+        knk mlsf sna minis alamiyom bnde dedim su ck sevdgm knkma site yapim of lnt olsn super fikir!<br>
         umrm guzel bi site olr ve butonlara tikla knk<br><br>
         <b>sonuc:</b> UMRM BEGENIRSN 😭
       </div>
     </div>
   </section>
-
   <section id="mlbb">
     <div class="bolum-baslik">
       <div class="mini">BEST PRELER</div>
       <h2>EN II ML DUO KNKLAR? 🎮</h2>
       <p>rakiplrn korkulu ruyasi... (orman rafael?) </p>
     </div>
-
     <div class="kart mlbb">
       <div class="emoji">💜</div>
       <h3>Carmilla × Cecilion</h3>
-      <p>
-        knk bizdn dha ii carmila ceci asla olamas harikayis bb
-      </p>
+      <p>knk bizdn dha ii carmila ceci asla olamas harikayis bb</p>
       <span class="rozeti">CARMILLA</span>
       <span class="rozeti">CECILION</span>
       <span class="rozeti">BEST DUO</span>
-      <p>
-        muthis uyum? %100<br>
-        mvp? %1000<br>
-        BEST KNKLAR!
-      </p>
-      <button class="buton" onclick="mesajAc('mlbbmesaj')">
-        CK GIZLI SIR 
-      </button>
-      <div class="gizli-alan" id="mlbbmesaj">
-        knk snle hint muzigi coverlamak
-        istioym 💗
-      </div>
+      <p>muthis uyum? %100<br>mvp? %1000<br>BEST KNKLAR!</p>
+      <button class="buton" onclick="mesajAc('mlbbmesaj')">CK GIZLI SIR</button>
+      <div class="gizli-alan" id="mlbbmesaj">knk snle hint muzigi coverlamak istioym 💗</div>
     </div>
   </section>
-
   <section id="gizli">
     <div class="bolum-baslik">
       <div class="mini">HEYYOOO</div>
       <h2>SON BI SUPRIZ 💌</h2>
       <p>butun garip yazilrmn arkasinda bi gercek vr</p>
     </div>
-
     <div class="kart" style="text-align:center;">
       <div class="emoji">🎀💌🎀</div>
       <h3>bu mesaji acmaya hazir misn cnm?</h3>
-      <button class="buton" onclick="mesajAc('kalbim')">
-        TIKLA ♡
-      </button>
+      <button class="buton" onclick="mesajAc('kalbim')">TIKLA ♡</button>
       <div class="gizli-alan" id="kalbim">
         II KI VRSIN CNM KNKM. 💗<br><br>
-        Seninle konustugum, guldugum ve oyun oynadgm icin
-        gercktn ck mutluyum. sn olmasan napardm bilmyrm,
+        Seninle konustugum, guldugum ve oyun oynadgm icin gercktn ck mutluyum. sn olmasan napardm bilmyrm,
         umrm tum dileklerin gerceklesir ve hep best knk olurus <br><br>
         Sni ck ck ck seviom dogum gunun kutlu olsun 🎂<br><br>
         <b>her daim sni sevcek bi knkn vr unutma bunu 💗</b>
       </div>
     </div>
   </section>
-
   <div class="son">
     <div style="font-size:42px;">🎂 🎀 💗 🎀 🎂</div>
     <h2>ii ki dogdn cnm knkm</h2>
@@ -475,121 +245,176 @@
     <button class="buton" onclick="kalpler()">SON KEZ KALP YAAGMURUU ♡</button>
     <button class="buton acik" onclick="konfeti()">KUTLAMA BASLASINNN 🎉🎂</button>
   </div>
-
-  <footer>
-    TIA KNK WORLD © · 💗
-  </footer>
-
+  <footer>TIA KNK WORLD © · 💗</footer>
   <script>
     function mesajAc(id) {
       const alan = document.getElementById(id);
       alan.classList.toggle("goster");
     }
-
-    // Mevcut kalp butonu korunuyor; artık iki çeşit kalp efekti başlatıyor.
     function kalpler() {
       const emojiler = ["💗", "💕", "🎀", "💖", "✨"];
-
       for (let i = 0; i < 28; i++) {
         const kalp = document.createElement("span");
         kalp.className = "kalp";
-        kalp.textContent =
-          emojiler[Math.floor(Math.random() * emojiler.length)];
-
+        kalp.textContent = emojiler[Math.floor(Math.random() * emojiler.length)];
         kalp.style.left = Math.random() * 100 + "vw";
         kalp.style.fontSize = (16 + Math.random() * 20) + "px";
         kalp.style.animationDuration = (3 + Math.random() * 3) + "s";
-
         document.body.appendChild(kalp);
         setTimeout(() => kalp.remove(), 6500);
       }
-
       kalpYagmuru();
     }
-
-    // Yeni efekt: yukarıdan kalp ve kurdele yağmuru
     function kalpYagmuru() {
       const emojiler = ["💗", "💖", "💕", "💘", "🎀", "💝", "✨"];
-
       for (let i = 0; i < 65; i++) {
         setTimeout(() => {
           const parca = document.createElement("span");
           parca.className = "efekt-kalp";
-          parca.textContent =
-            emojiler[Math.floor(Math.random() * emojiler.length)];
-
+          parca.textContent = emojiler[Math.floor(Math.random() * emojiler.length)];
           parca.style.left = Math.random() * 100 + "vw";
           parca.style.fontSize = (16 + Math.random() * 24) + "px";
           parca.style.animationDuration = (2.5 + Math.random() * 3) + "s";
-
           document.body.appendChild(parca);
           setTimeout(() => parca.remove(), 6000);
         }, i * 45);
       }
     }
-
-    // Yeni efekt: konfeti ve doğum günü kutlaması
     function konfeti() {
-      const renkler = [
-        "#ff69b4", "#ffd700", "#b388ff",
-        "#ff8a80", "#80deea", "#ffffff"
-      ];
-
+      const renkler = ["#ff69b4", "#ffd700", "#b388ff", "#ff8a80", "#80deea", "#ffffff"];
       kalpler();
-
       for (let i = 0; i < 100; i++) {
         setTimeout(() => {
           const parca = document.createElement("span");
           parca.className = "konfeti-parca";
           parca.textContent = Math.random() > 0.5 ? "■" : "✦";
           parca.style.left = Math.random() * 100 + "vw";
-          parca.style.color =
-            renkler[Math.floor(Math.random() * renkler.length)];
+          parca.style.color = renkler[Math.floor(Math.random() * renkler.length)];
           parca.style.fontSize = (8 + Math.random() * 12) + "px";
-          parca.style.setProperty(
-            "--kayma",
-            (Math.random() * 240 - 120) + "px"
-          );
+          parca.style.setProperty("--kayma", (Math.random() * 240 - 120) + "px");
           parca.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
-
           document.body.appendChild(parca);
           setTimeout(() => parca.remove(), 5500);
         }, i * 15);
       }
     }
-
-    // Yeni efekt: fareyi takip eden kalpler
     let sonKalpZamani = 0;
-
     function takipKalbi(x, y) {
       const simdi = Date.now();
-
       if (simdi - sonKalpZamani < 65) return;
       sonKalpZamani = simdi;
-
       const kalp = document.createElement("span");
       kalp.className = "fare-kalbi";
-      kalp.textContent =
-        ["💗", "💕", "🎀", "✨"][Math.floor(Math.random() * 4)];
+      kalp.textContent = ["💗", "💕", "🎀", "✨"][Math.floor(Math.random() * 4)];
       kalp.style.left = x + "px";
       kalp.style.top = y + "px";
       kalp.style.fontSize = (12 + Math.random() * 12) + "px";
-
       document.body.appendChild(kalp);
       setTimeout(() => kalp.remove(), 850);
     }
-
     document.addEventListener("mousemove", function (e) {
       takipKalbi(e.clientX, e.clientY);
     });
-
-    // Telefonda parmak hareketini de takip eder.
     document.addEventListener("touchmove", function (e) {
-      if (e.touches.length > 0) {
-        takipKalbi(e.touches[0].clientX, e.touches[0].clientY);
-      }
+      if (e.touches.length > 0) takipKalbi(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
   </script>
+  ```html
+<style>
+/* Tia'nin gizli mektubu */
+.tia-secret-wrap {
+  text-align: center;
+  margin: 30px auto 20px;
+  padding: 12px;
+  max-width: 420px;
+}
 
+.tia-secret-wrap details {
+  border: 2px solid #f2c6df;
+  border-radius: 20px;
+  background: #fff7fc;
+  padding: 14px;
+  box-shadow: 0 5px 18px #dba6c522;
+}
+
+.tia-secret-wrap summary {
+  cursor: pointer;
+  list-style: none;
+  color: #a44c81;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.tia-secret-wrap summary::-webkit-details-marker {
+  display: none;
+}
+
+.tia-secret-wrap .envelope {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 8px;
+  transition: transform 0.2s;
+}
+
+.tia-secret-wrap details[open] .envelope {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.tia-secret-wrap .letter {
+  background: white;
+  color: #79506a;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.tia-secret-wrap .letter p {
+  margin: 8px 0;
+}
+
+.tia-secret-wrap .hint {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #bd81a6;
+}
+</style>
+
+<section class="tia-secret-wrap">
+  <details>
+    <summary>
+      <span class="envelope">💌</span>
+      knk, sna minik bi mektup hazrldm...
+      <span class="hint">Acmak icin dokun ♡</span>
+    </summary>
+
+    <div class="letter">
+      <p><strong>KNKKKK 💗</strong></p>
+
+      <p>
+        sna bi kac gun once muthis bi seyler yaptigimdan
+        bahsederken bu siteyi kastediyordum, su bastaki 
+        minisleri eklerken ruhum cekildi site kodlamak
+        ck zormus ama snin icin her syi yaparm...
+      </p>
+
+      <p>
+        nice nice mutlu ve benli senelere, bu yilin umrm 
+        ck gzl gecer, dersler kolay gelir ve bence en onemlisi
+        saglikli olrsn
+      </p>
+
+      <p>
+        ii ki vrsn cnm knkm uaaa! 🐈🎀
+      </p>
+
+      <p>— mivisten ♡</p>
+    </div>
+  </details>
+</section>
+```
 </body>
 </html>
