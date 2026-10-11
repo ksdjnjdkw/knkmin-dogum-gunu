@@ -319,5 +319,102 @@
       if (e.touches.length > 0) takipKalbi(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
   </script>
+  ```html
+<style>
+/* Tia'nin gizli mektubu */
+.tia-secret-wrap {
+  text-align: center;
+  margin: 30px auto 20px;
+  padding: 12px;
+  max-width: 420px;
+}
+
+.tia-secret-wrap details {
+  border: 2px solid #f2c6df;
+  border-radius: 20px;
+  background: #fff7fc;
+  padding: 14px;
+  box-shadow: 0 5px 18px #dba6c522;
+}
+
+.tia-secret-wrap summary {
+  cursor: pointer;
+  list-style: none;
+  color: #a44c81;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.tia-secret-wrap summary::-webkit-details-marker {
+  display: none;
+}
+
+.tia-secret-wrap .envelope {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 8px;
+  transition: transform 0.2s;
+}
+
+.tia-secret-wrap details[open] .envelope {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.tia-secret-wrap .letter {
+  background: white;
+  color: #79506a;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.tia-secret-wrap .letter p {
+  margin: 8px 0;
+}
+
+.tia-secret-wrap .hint {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #bd81a6;
+}
+</style>
+
+<section class="tia-secret-wrap">
+  <details>
+    <summary>
+      <span class="envelope">💌</span>
+      knk, sna minik bi mektup hazrldm...
+      <span class="hint">Acmak icin dokun ♡</span>
+    </summary>
+
+    <div class="letter">
+      <p><strong>KNKKKK 💗</strong></p>
+
+      <p>
+        sna bi kac gun once muthis bi seyler yaptigimdan
+        bahsederken bu siteyi kastediyordum, su bastaki 
+        minisleri eklerken ruhum cekildi site kodlamak
+        ck zormus ama snin icin her syi yaparm...
+      </p>
+
+      <p>
+        nice nice mutlu ve benli senelere, bu yilin umrm 
+        ck gzl gecer, dersler kolay gelir ve bence en onemlisi
+        saglikli olrsn
+      </p>
+
+      <p>
+        ii ki vrsn cnm knkm uaaa! 🐈🎀
+      </p>
+
+      <p>— mivisten ♡</p>
+    </div>
+  </details>
+</section>
+```
 </body>
 </html>
